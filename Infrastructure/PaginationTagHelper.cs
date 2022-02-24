@@ -32,6 +32,7 @@ namespace Mission7.Infrastructure
         public override void Process (TagHelperContext thc, TagHelperOutput tho)
         {
             IUrlHelper uh = uhf.GetUrlHelper(vc);
+
             TagBuilder final = new TagBuilder("div");
 
             for (int i = 1; i < PageModel.TotalPages; i++)

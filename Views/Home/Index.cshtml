@@ -7,9 +7,15 @@
 
 @foreach (Book b in Model.Books)
 {
-    <h3>Title: @b.Title</h3>
-    <ul>
-        @*Maybe swap this list and use grid to lay things out neatly or something*@
+
+<div class="card card-outline-primary m-1 p-1" style="width: 45%; background-color: #F0F0F0; ">
+    <div class="p-1 rounded" style="background-color: #335145;">
+        <h3 class="text-white ">
+            @b.Title
+
+        </h3>
+    </div>
+    <ul class="list-unstyled">
         <li>Author: @b.Author</li>
         <li>Publisher: @b.Publisher</li>
         <li>ISBN: @b.Isbn</li>
@@ -18,9 +24,12 @@
         <li>Number of Pages: @b.PageCount</li>
         <li>Price: @b.Price</li>
     </ul>
+</div>
+    
+
     <br />
 }
 
-<div page-model="@Model.PageInfo">
+<div page-model="@Model.PageInfo" page-action="Index">
 
 </div>

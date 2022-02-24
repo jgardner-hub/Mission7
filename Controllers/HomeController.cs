@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Mission7.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,16 @@ namespace Mission7.Controllers
 {
     public class HomeController : Controller
     {
+        private IBookstoreRepository repo;
+        public HomeController (IBookstoreRepository temp)
+        {
+            repo = temp;
+        }
         public IActionResult Index()
         {
-            return View();
+            var myVar = repo.Books.ToList();
+
+            return View(myVar);
         }
     }
 }

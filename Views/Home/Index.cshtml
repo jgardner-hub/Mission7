@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+}
+
+@model List<Book> 
+
+<h1>Bookstore Project</h1>
+
+@foreach (Book b in Model)
+{
+    <h3>Title: @b.Title</h3>
+    <ul>
+        @*Maybe swap this list and use grid to lay things out neatly or something*@
+        <li>Author: @b.Author</li>
+        <li>Publisher: @b.Publisher</li>
+        <li>ISBN: @b.Isbn</li>
+        <li>Classification: @b.Classification</li>
+        <li>Category: @b.Category</li>
+        <li>Number of Pages: @b.PageCount</li>
+        <li>Price: @b.Price</li>
+    </ul>
+    <br />
 }

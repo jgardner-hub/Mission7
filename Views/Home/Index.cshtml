@@ -1,11 +1,11 @@
 ﻿@{
 }
 
-@model List<Book> 
+@model BooksViewModel
 
 <h1>Bookstore Project</h1>
 
-@foreach (Book b in Model)
+@foreach (Book b in Model.Books)
 {
     <h3>Title: @b.Title</h3>
     <ul>
@@ -20,3 +20,7 @@
     </ul>
     <br />
 }
+
+<div page-model="@Model.PageInfo">
+
+</div>

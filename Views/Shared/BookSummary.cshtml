@@ -17,7 +17,18 @@
         <li>Classification: @Model.Classification</li>
         <li>Category: @Model.Category</li>
         <li>Number of Pages: @Model.PageCount</li>
-        <li>Price: @Model.Price</li>
+        <li>Price: $@Model.Price</li>
     </ul>
+    <form method="post" asp-page="/Buy">
+
+        <input type="hidden" asp-for="@Model.BookId" />
+        <input type="hidden" asp-for="@Model.Price"/>
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+
+        <span class="card-text">
+            <button type="submit" class="btn btn-success btn-sm float-end">Add to Cart</button>
+        </span>
+    </form>
 </div>
 <br />
+

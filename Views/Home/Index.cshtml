@@ -8,26 +8,8 @@
 @foreach (Book b in Model.Books)
 {
 
-<div class="card card-outline-primary m-1 p-1" style="width: 45%; background-color: #F0F0F0; ">
-    <div class="p-1 rounded" style="background-color: #335145;">
-        <h3 class="text-white ">
-            @b.Title
+<partial name="BookSummary" model="b"/>
 
-        </h3>
-    </div>
-    <ul class="list-unstyled">
-        <li>Author: @b.Author</li>
-        <li>Publisher: @b.Publisher</li>
-        <li>ISBN: @b.Isbn</li>
-        <li>Classification: @b.Classification</li>
-        <li>Category: @b.Category</li>
-        <li>Number of Pages: @b.PageCount</li>
-        <li>Price: @b.Price</li>
-    </ul>
-</div>
-
-
-    <br />
 }
 
 <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"

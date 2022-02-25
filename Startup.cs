@@ -51,6 +51,20 @@ namespace Mission7
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("categorypage",
+                    "{categoryType}/Page{pageNum}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("Paging", 
+                    "Page{pageNum}", 
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
+
+                endpoints.MapControllerRoute("type",
+                    "{categoryType}",
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
+
+                
+
                 endpoints.MapDefaultControllerRoute();
             });
         }

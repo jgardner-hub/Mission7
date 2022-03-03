@@ -9,8 +9,7 @@ namespace Mission7.Models
     {
         public List<BasketLineItem> Items { get; set; } = new List<BasketLineItem>();
 
-
-        public void AddItem (Book bok, int qty)
+        public virtual void AddItem (Book bok, int qty)
         {
             BasketLineItem line = Items
                 .Where(p => p.Book.BookId == bok.BookId)
@@ -30,6 +29,18 @@ namespace Mission7.Models
             }
 
         }
+
+        public virtual void RemoveItem(Book bok)
+        {
+            Items.RemoveAll(x => x.Book.BookId == bok.BookId);
+        }
+
+        public virtual void ClearBasket()
+        {
+            Items.Clear();
+        }
+
+
         public double CalculateTotal() //maybe put an int bookId here???
         {
             double sum = Items.Sum(x => x.Quantity * x.Book.Price); //this needs to be fixed 

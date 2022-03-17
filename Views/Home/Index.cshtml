@@ -3,12 +3,23 @@
 
 @model BooksViewModel
 
-<h1>Bookstore Project</h1>
+<div class="jumbotron">
+    <h1>Bookstore Project</h1>
+    <p class="lead">Welcome to the bookstore you didn't know you needed</p>
+    <hr class="my-4">
+
+</div>
+
+<h4>For my mission 10 bootstrap I made the following 2 changes:</h4>
+<ol>
+    <li>I changed the header for this page to be a 'jumbotron' which is basically a gian fancy header</li>
+    <li>I made it so each book card would collapse and you can click it to expand and view the rest of the information</li>
+</ol>
 
 @foreach (Book b in Model.Books)
 {
 
-<partial name="BookSummary" model="b"/>
+    <partial name="BookSummary" model="b" />
 
 }
 

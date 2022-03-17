@@ -4,25 +4,32 @@
 @model Book
 
 <div class="card card-outline-primary m-1 p-1" style="background-color: #F0F0F0; ">
-    <div class="p-1 rounded" style="background-color: #335145;">
-        <h3 class="text-white ">
+
+    <a class="p-1 rounded" style="background-color: #335145; text-decoration:none;" data-bs-toggle="collapse" href="#s_@Model.BookId" role="button" aria-expanded="false" aria-controls="s_@Model.BookId">
+        <h3 class="text-white" style="margin-bottom:0px; padding-bottom:0px;">
             @Model.Title
 
         </h3>
+        <span class="text-muted">Click for more/less information</span>
+    </a>
+
+
+    <div class="collapse" id="s_@Model.BookId">
+        <ul class="list-unstyled">
+            <li>Author: @Model.Author</li>
+            <li>Publisher: @Model.Publisher</li>
+            <li>ISBN: @Model.Isbn</li>
+            <li>Classification: @Model.Classification</li>
+            <li>Category: @Model.Category</li>
+            <li>Number of Pages: @Model.PageCount</li>
+            <li>Price: $@Model.Price</li>
+        </ul>
     </div>
-    <ul class="list-unstyled">
-        <li>Author: @Model.Author</li>
-        <li>Publisher: @Model.Publisher</li>
-        <li>ISBN: @Model.Isbn</li>
-        <li>Classification: @Model.Classification</li>
-        <li>Category: @Model.Category</li>
-        <li>Number of Pages: @Model.PageCount</li>
-        <li>Price: $@Model.Price</li>
-    </ul>
+
     <form method="post" asp-page="/Buy">
 
         <input type="hidden" asp-for="@Model.BookId" />
-        <input type="hidden" asp-for="@Model.Price"/>
+        <input type="hidden" asp-for="@Model.Price" />
         <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
         <span class="card-text">

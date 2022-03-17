@@ -8,12 +8,14 @@
 
         <div class="row p-2">
 
-            <div class="col-3 d-grid">
+            <div class="col-3">
+                <div class="d-grid gap-2">
+                    <NavLink class="btn btn-outline-secondary" href="/admin/books"
+                             ActiveClass="btn-secondary text-white" Match="NavLinkMatch.Prefix">Books</NavLink>
+                    <NavLink class="btn btn-outline-secondary" href="/admin/orders"
+                             ActiveClass="btn-secondary text-white" Match="NavLinkMatch.Prefix">Orders</NavLink>
+                </div>
 
-                <NavLink class="btn btn-outline-secondary" href="/admin/books"
-                         ActiveClass="btn-secondary text-white" Match="NavLinkMatch.Prefix">Books</NavLink>
-                <NavLink class="btn btn-outline-secondary" href="/admin/orders"
-                         ActiveClass="btn-secondary text-white" Match="NavLinkMatch.Prefix">Orders</NavLink>
             </div>
 
             <div class="col">
